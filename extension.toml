@@ -1,0 +1,18 @@
+# TOML: highlighting from a Tree-sitter grammar compiled to WebAssembly. No
+# code. See docs/extensions.md#languages.
+id = "example.toml"
+name = "TOML"
+version = "0.1.0"
+description = "TOML highlighting."
+api_version = "1"
+
+[engines]
+ferrite = ">=0.1.0"
+
+[[languages]]
+id = "toml"
+name = "TOML"
+file_extensions = ["toml"]
+file_names = ["Cargo.lock"]
+grammar = "grammars/tree-sitter-toml.wasm"
+highlights = "queries/highlights.scm"

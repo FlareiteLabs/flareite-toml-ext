@@ -16,3 +16,4 @@ file_extensions = ["toml"]
 file_names = ["Cargo.lock"]
 grammar = "grammars/tree-sitter-toml.wasm"
 highlights = "queries/highlights.scm"
+line_comment = "#"

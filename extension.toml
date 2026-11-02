@@ -4,6 +4,7 @@ id = "example.toml"
 name = "TOML"
 version = "0.1.0"
 description = "TOML highlighting."
+author = "Ferrite"
 api_version = "1"
 
 [engines]

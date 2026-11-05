@@ -1,6 +1,6 @@
 # TOML: highlighting from a Tree-sitter grammar compiled to WebAssembly. No
 # code. See docs/extensions.md#languages.
-id = "example.toml"
+id = "ferrite.toml"
 name = "TOML"
 version = "0.1.0"
 description = "TOML highlighting."

@@ -1,14 +1,14 @@
 # TOML: highlighting from a Tree-sitter grammar compiled to WebAssembly. No
-# code. See docs/extensions.md#languages.
-id = "ferrite.toml"
+# code. See Flareite's docs/extensions.md#languages.
+id = "flareite.toml"
 name = "TOML"
 version = "0.1.0"
 description = "TOML highlighting."
-author = "Ferrite"
+author = "Flareite"
 api_version = "1"
 
 [engines]
-ferrite = ">=0.1.0"
+flareite = ">=0.1.0"
 
 [[languages]]
 id = "toml"

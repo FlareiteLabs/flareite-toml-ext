@@ -2,7 +2,7 @@
 # code. See Flareite's docs/extensions.md#languages.
 id = "flareite.toml"
 name = "TOML"
-version = "0.1.0"
+version = "0.1.1"
 description = "TOML highlighting."
 author = "Flareite"
 api_version = "1"
@@ -13,7 +13,7 @@ flareite = ">=0.1.0"
 [[languages]]
 id = "toml"
 name = "TOML"
-file_extensions = ["toml"]
+file_extensions = ["toml", "tosd"]
 file_names = ["Cargo.lock"]
 grammar = "grammars/tree-sitter-toml.wasm"
 highlights = "queries/highlights.scm"

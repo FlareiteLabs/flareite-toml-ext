@@ -1,14 +1,27 @@
-# TOML: highlighting from a Tree-sitter grammar compiled to WebAssembly. No
-# code. See Flareite's docs/extensions.md#languages.
+# TOML: highlighting from a Tree-sitter grammar compiled to WebAssembly, and
+# documents parsed for Flareite's schemas, which check them; their keys and
+# values are completed and described from what the schemas say. See
+# Flareite's docs/extensions.md#languages and #schemas.
 id = "flareite.toml"
 name = "TOML"
-version = "0.1.1"
-description = "TOML highlighting."
+version = "0.2.0"
+description = "TOML highlighting, and checking, completion, and hover from schemas."
 author = "Flareite"
 api_version = "1"
+entrypoint = "target/wasm32-unknown-unknown/release/flareite_toml.wasm"
+activation = ["on-language:toml"]
 
 [engines]
 flareite = ">=0.1.0"
+
+# documents_read: reading TOML documents, to parse them for schemas.
+[permissions]
+documents_read = true
+
+[build]
+command = "cargo"
+args = ["build", "--release"]
+watch = ["src", "Cargo.toml"]
 
 [[languages]]
 id = "toml"
@@ -19,3 +32,22 @@ grammar = "grammars/tree-sitter-toml.wasm"
 highlights = "queries/highlights.scm"
 folds = "queries/folds.scm"
 line_comment = "#"
+
+[[commands]]
+id = "flareite.toml.complete"
+title = "Complete from Schemas"
+hidden = true
+
+[[commands]]
+id = "flareite.toml.hover"
+title = "Describe from Schemas"
+hidden = true
+
+[[completion_providers]]
+languages = ["toml"]
+command = "flareite.toml.complete"
+trigger_characters = ["[", ".", "\"", "=", " "]
+
+[[hover_providers]]
+languages = ["toml"]
+command = "flareite.toml.hover"

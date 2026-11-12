@@ -4,10 +4,10 @@
 # Flareite's docs/extensions.md#languages and #schemas.
 id = "flareite.toml"
 name = "TOML"
-version = "0.3.0"
+version = "1.0.0"
 description = "TOML highlighting, and checking, completion, and hover from schemas."
 author = "Flareite"
-api_version = "1"
+api_version = "2"
 entrypoint = "target/wasm32-unknown-unknown/release/flareite_toml.wasm"
 activation = ["on-language:toml"]
 
@@ -53,21 +53,9 @@ auto_closing_pairs = [
   ] },
 ]
 
-[[commands]]
-id = "flareite.toml.complete"
-title = "Complete from Schemas"
-hidden = true
-
-[[commands]]
-id = "flareite.toml.hover"
-title = "Describe from Schemas"
-hidden = true
-
 [[completion_providers]]
 languages = ["toml"]
-command = "flareite.toml.complete"
 trigger_characters = ["[", ".", "\"", "=", " "]
 
 [[hover_providers]]
 languages = ["toml"]
-command = "flareite.toml.hover"
